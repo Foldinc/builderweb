@@ -77,7 +77,7 @@ model User {
   role         Role           @default(USER)
   websites     Website[]      @relation("WebsiteOwner")
   permissions  Permission[]   
-  tickets      Ticket[]       
+  tickets      Ticket[]        
   notifications Notification[]
   sessions     Session[]
 
@@ -89,6 +89,7 @@ model User {
   Website Website[] @relation("WebsiteCollaborators")
   Account Account[]
 }
+
 model Account {
   id                String  @id @default(uuid())
   userId            String  
@@ -196,6 +197,7 @@ model WebsiteSettings {
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
 }
+
 
 model Page {
   id           String    @id @default(uuid())
